@@ -12,4 +12,13 @@ interface ApiService {
         @Query("sort") sort: String,
         @Query("site") site: String,
     ): QuestionsDTO
+
+    @GET("search/advanced")
+    suspend fun searchQuestions(
+        @Query("order") order: String,
+        @Query("sort") sort: String,
+        @Query("tagged") tagged: String,
+        @Query("title") title: String,
+        @Query("site") site: String,
+    ): QuestionsDTO
 }

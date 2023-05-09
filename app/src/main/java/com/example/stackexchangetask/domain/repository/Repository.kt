@@ -9,4 +9,12 @@ interface Repository {
         sort: String = "hot",
         site: String = "stackoverflow",
     ): List<QuestionModel>
+
+    suspend fun searchQuestions(
+        order: String = "desc",
+        sort: String = "activity",
+        tagged: String,
+        title: String,
+        site: String = "stackoverflow",
+    ): List<QuestionModel>
 }

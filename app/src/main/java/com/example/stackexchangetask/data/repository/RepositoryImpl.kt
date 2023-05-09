@@ -14,5 +14,13 @@ class RepositoryImpl @Inject constructor(private val apiService: ApiService) : R
         site: String
     ): List<QuestionModel> = apiService.getQuestions(order, sort, site).toQuestionModels()
 
+    override suspend fun searchQuestions(
+        order: String,
+        sort: String,
+        tagged: String,
+        title: String,
+        site: String
+    ): List<QuestionModel> = apiService.searchQuestions(order, sort, tagged, title, site).toQuestionModels()
+
 
 }
