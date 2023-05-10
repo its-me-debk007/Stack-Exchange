@@ -11,6 +11,7 @@ fun QuestionsDTO.toQuestionModels(): List<QuestionModel> {
         models.add(
             QuestionModel(
                 it.answer_count,
+                it.view_count,
                 it.creation_date,
                 it.last_edit_date,
                 it.link,

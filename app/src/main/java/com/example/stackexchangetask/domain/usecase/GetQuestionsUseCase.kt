@@ -1,6 +1,6 @@
 package com.example.stackexchangetask.domain.usecase
 
-import com.example.stackexchangetask.common.ApiState
+import com.example.stackexchangetask.util.ApiState
 import com.example.stackexchangetask.domain.model.QuestionModel
 import com.example.stackexchangetask.domain.repository.Repository
 import kotlinx.coroutines.flow.Flow
