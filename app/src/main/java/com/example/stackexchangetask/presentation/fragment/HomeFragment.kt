@@ -1,11 +1,12 @@
-package com.example.stackexchangetask
+package com.example.stackexchangetask.presentation.fragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.stackexchangetask.databinding.FragmentFirstBinding
+import com.example.stackexchangetask.R
+import com.example.stackexchangetask.databinding.FragmentHomeBinding
 import com.example.stackexchangetask.domain.model.OwnerModel
 import com.example.stackexchangetask.domain.model.QuestionModel
 import com.example.stackexchangetask.presentation.controller.HomeEpoxyController
@@ -14,14 +15,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class FirstFragment : Fragment(R.layout.fragment_first) {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private lateinit var binding: FragmentFirstBinding
+    private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentFirstBinding.bind(view)
+        binding = FragmentHomeBinding.bind(view)
 
         lifecycleScope.launch {
             showUi()

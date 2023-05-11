@@ -10,7 +10,7 @@ import com.example.stackexchangetask.domain.model.QuestionModel
 import com.example.stackexchangetask.util.ViewBindingKotlinModel
 import com.example.stackexchangetask.util.addChip
 
-class HomeEpoxyController(private val context: Context, private val data: List<QuestionModel>) :
+class HomeEpoxyController(private val context: Context, private var data: List<QuestionModel>) :
     EpoxyController() {
 
     override fun buildModels() {
@@ -35,6 +35,11 @@ class HomeEpoxyController(private val context: Context, private val data: List<Q
             ).id(questionModel.question_id).addTo(this)
         }
     }
+
+    fun updateData(newData: List<QuestionModel>) {
+        data = newData
+        requestModelBuild()
+    }
 }
 
 data class QuestionEpoxyModel(
@@ -44,7 +49,7 @@ data class QuestionEpoxyModel(
     val _votes: Int,
     val _askTime: Int,
     val _ownerName: String,
-    val _ownerImage: String,
+    val _ownerImage: String?,
     val tags: List<String>,
     val context: Context
 ) : ViewBindingKotlinModel<ModelQuestionBinding>(R.layout.model_question) {

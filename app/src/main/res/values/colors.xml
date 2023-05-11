@@ -12,4 +12,7 @@
     <color name="tag_background_color">#e1ecf4</color>
     <color name="tag_text_color">#39739d</color>
     <color name="views_color">#6a737c</color>
+    <color name="search_bar_background">#EFEFEF</color>
+    <color name="colorTransparent">#00000000</color>
+
 </resources>

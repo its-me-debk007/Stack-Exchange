@@ -10,4 +10,7 @@
     <string name="ans_views">%1$d answers    %2$d views</string>
     <string name="advertisement">advertisement</string>
     <string name="owner_image">owner_image</string>
+    <string name="search">search</string>
+    <string name="search_questions"> Search Questions</string>
+    <string name="tags">tags</string>
 </resources>

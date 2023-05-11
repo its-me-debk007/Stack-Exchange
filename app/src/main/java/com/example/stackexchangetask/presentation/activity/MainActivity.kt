@@ -24,9 +24,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_search)
 
         val navController = findNavController(R.id.fragment_container_view)
         appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        binding.search.setOnClickListener {
+            navController.navigate(R.id.action_HomeFragment_to_SearchFragment)
+        }
 
 //        viewModel.searchQuestions("stdout", "java;go;python")
 
