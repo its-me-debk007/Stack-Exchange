@@ -33,7 +33,7 @@ class SearchViewModel @Inject constructor(private val searchQuestionsUseCase: Se
                 }
 
                 is ApiState.Error -> {
-                    _questions.value = ApiState.Error(msg = it.errorMsg.toString())
+                    _questions.value = ApiState.Error(msg = "No or Poor Internet connection")
                     Log.d("VIEWMODEL", it.errorMsg.toString())
                 }
             }
