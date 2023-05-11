@@ -21,13 +21,11 @@ fun hasNetwork(context: Context): Boolean? {
 
 const val CACHE_SIZE = (5 * 1024 * 1024).toLong()
 
+const val AD_LINK = "https://gumlet.assettype.com/afaqs%2F2022-07%2Fe42911e0-9586-47a6-bbf3-c3f55f0bebde%2Fnescafe_asmr.png?w=1200&auto=format%2Ccompress&ogImage=true"
+
 fun ChipGroup.addChip(context: Context, text: String) {
 
-    this.setChipSpacing(6)
-
     Chip(context).apply {
-
-//        setTextAppearance(TextAppearance(context, R.style.))
 
         this.text = text
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Stack Exchange Task</string>
+    <string name="app_name">Task</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -13,4 +13,6 @@
     <string name="search">search</string>
     <string name="search_questions"> Search Questions</string>
     <string name="tags">tags</string>
+    <string name="back">back</string>
+    <string name="search_your_questions_here">Search your questions here</string>
 </resources>
