@@ -2,8 +2,8 @@ package com.example.stackexchangetask.data.di
 
 import android.content.Context
 import com.example.stackexchangetask.BuildConfig
-import com.example.stackexchangetask.common.CACHE_SIZE
-import com.example.stackexchangetask.common.HAS_NETWORK
+import com.example.stackexchangetask.util.CACHE_SIZE
+import com.example.stackexchangetask.util.hasNetwork
 import com.example.stackexchangetask.data.network.ApiService
 import com.example.stackexchangetask.data.repository.RepositoryImpl
 import com.example.stackexchangetask.domain.repository.Repository
@@ -42,7 +42,7 @@ object DataModule {
         .addInterceptor { chain ->
             var request = chain.request()
 
-            request = if (HAS_NETWORK(context)!!)
+            request = if (hasNetwork(context)!!)
                 request.newBuilder().header("Cache-Control", "public, max-age=" + 5).build()
             else
                 request.newBuilder().header(

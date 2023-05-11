@@ -3,7 +3,7 @@ package com.example.stackexchangetask.presentation.viewmodel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.stackexchangetask.common.ApiState
+import com.example.stackexchangetask.util.ApiState
 import com.example.stackexchangetask.domain.model.QuestionModel
 import com.example.stackexchangetask.domain.usecase.SearchQuestionsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

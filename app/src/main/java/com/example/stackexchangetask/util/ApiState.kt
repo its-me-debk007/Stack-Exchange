@@ -1,4 +1,4 @@
-package com.example.stackexchangetask.common
+package com.example.stackexchangetask.util
 
 sealed class ApiState<T>(
     val data: T? = null,
