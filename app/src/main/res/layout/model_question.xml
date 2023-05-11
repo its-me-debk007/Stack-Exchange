@@ -71,11 +71,11 @@
         android:id="@+id/owner_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="16dp"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="8dp"
         android:textColor="@color/question_color"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ask_time"
         app:layout_constraintEnd_toStartOf="@id/ask_time"
         app:layout_constraintTop_toTopOf="@id/ask_time" />
 
@@ -83,9 +83,10 @@
         android:id="@+id/owner_image"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginEnd="2dp"
         android:contentDescription="@string/owner_image"
         app:layout_constraintEnd_toStartOf="@+id/owner_name"
-        app:layout_constraintTop_toTopOf="@id/owner_name" />
+        app:layout_constraintTop_toTopOf="@id/owner_name"
+        app:layout_constraintBottom_toBottomOf="@id/owner_name"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

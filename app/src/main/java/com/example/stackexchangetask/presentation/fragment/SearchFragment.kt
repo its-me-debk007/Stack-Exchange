@@ -2,6 +2,7 @@ package com.example.stackexchangetask.presentation.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.SpannableStringBuilder
 import android.util.Log
 import android.view.View
 import android.widget.HorizontalScrollView
@@ -43,12 +44,25 @@ class SearchFragment : Fragment(R.layout.fragment_search), ClickListener {
         binding = FragmentSearchBinding.bind(view)
 
         var isChipChecked = false
+        var searchQuestionsText = ""
+        var searchTagsText = ""
 
         binding.tagMode.setOnCheckedChangeListener { _, isChecked ->
 
             isChipChecked = isChecked
 
             binding.textInputEditText.hint = if (isChecked) "Enter Tags" else "Search Questions"
+
+            if (isChecked) {
+                searchQuestionsText = binding.textInputEditText.text.toString()
+                binding.textInputEditText.text = SpannableStringBuilder(searchTagsText)
+
+            } else {
+                searchTagsText = binding.textInputEditText.text.toString()
+                binding.textInputEditText.text = SpannableStringBuilder(searchQuestionsText)
+            }
+
+            binding.textInputEditText.selectAll()
         }
 
         binding.textInputEditText.setOnEditorActionListener { _, _, _ ->
@@ -100,6 +114,11 @@ class SearchFragment : Fragment(R.layout.fragment_search), ClickListener {
                     is ApiState.Error -> {
                         Log.d("VIEWMODEL", it.errorMsg.toString())
                         Toast.makeText(context, it.errorMsg, Toast.LENGTH_SHORT).show()
+
+                        binding.epoxyRecyclerView.visibility = View.GONE
+                        binding.placeholderText.visibility = View.VISIBLE
+                        binding.placeholderText.text = "No or Poor Internet connection :("
+                        binding.progressBar.hide()
                     }
 
                     is ApiState.Success -> {
