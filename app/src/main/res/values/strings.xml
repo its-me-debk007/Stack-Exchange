@@ -15,4 +15,5 @@
     <string name="tags">tags</string>
     <string name="back">back</string>
     <string name="search_your_questions_here">Search your questions here</string>
+    <string name="toggle_dark_mode">toggle dark mode</string>
 </resources>
