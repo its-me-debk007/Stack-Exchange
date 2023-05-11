@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Stack Exchange Task"
 include ':app'
-include ':network'
